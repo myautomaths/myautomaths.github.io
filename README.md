@@ -1,1 +1,0 @@
-# myautomaths.github.io
