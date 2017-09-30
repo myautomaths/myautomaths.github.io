@@ -42,7 +42,7 @@
         $("#download-button").html(`<i class="material-icons left">file_download</i>Install`);
     }
 
-    if ("__MAM__INSTALLED__" in window) {
+    window._mamInstalledHook = function() {
         $("#download-button").addClass("disabled").html(`<i class="material-icons left">file_download</i>Installed`);
     }
 </script>
