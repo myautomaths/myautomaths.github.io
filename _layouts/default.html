@@ -25,7 +25,8 @@
     <p class="flow-text center-align">Complete your MyMaths homework in seconds.</p>
 
     <div class="center-align">
-        <a class="waves-effect waves-light btn-large indigo" href="../static/myautomaths.xpi" id="download-button"><i class="material-icons left">file_download</i>Download</a>
+        <a class="waves-effect waves-light btn-large indigo" href="../static/myautomaths.xpi" id="download-button"><i
+                class="material-icons left">file_download</i>Download</a>
         <p class="grey-text lighten-2">Currently only available on Firefox.</p>
     </div>
 </div>
@@ -42,9 +43,15 @@
         $("#download-button").html(`<i class="material-icons left">file_download</i>Install`);
     }
 
-    window._mamInstalledHook = function() {
+    function _mamInstalledHook() {
         $("#download-button").addClass("disabled").html(`<i class="material-icons left">file_download</i>Installed`);
     }
+
+    window.onmessage = function (msg) {
+        if (msg === "mam_hook") {
+            _mamInstalledHook();
+        }
+    };
 </script>
 </body>
 </html>
